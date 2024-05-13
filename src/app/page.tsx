@@ -6,7 +6,7 @@ import { currentUser } from "@clerk/nextjs/server";
 export default async function Home() {
   const User = await currentUser();
 
-  console.log(User);
+  // console.log(User);
 
   return (
     <div className="pt-20">

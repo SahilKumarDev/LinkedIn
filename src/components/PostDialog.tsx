@@ -6,16 +6,14 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-// import ProfilePhoto from "./shared/ProfilePhoto";
-// import { Textarea } from "./ui/textarea";
 import { Images } from "lucide-react";
 import { useRef, useState } from "react";
-// import { readFileAsDataUrl } from "@/lib/utils";
 import Image from "next/image";
-// import { createPostAction } from "@/lib/serveractions";
 import { toast } from "sonner";
 import ProfilePhoto from "./ProfilePhoto";
 import { Textarea } from "./ui/textarea";
+import { readFileAsDataUrl } from "@/lib/utils";
+import { createPostAction } from "@/lib/serveraction";
 
 export function PostDialog({
   setOpen,
@@ -36,18 +34,18 @@ export function PostDialog({
 
   const fileChangeHandler = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    // if (file) {
-    //   const dataUrl = await readFileAsDataUrl(file);
-    //   setSelectedFile(dataUrl);
-    // }
+    if (file) {
+      const dataUrl = await readFileAsDataUrl(file);
+      setSelectedFile(dataUrl);
+    }
   };
   const postActionHandler = async (formData: FormData) => {
     const inputText = formData.get("inputText") as string;
-    // try {
-    //   await createPostAction(inputText, selectedFile);
-    // } catch (error) {
-    //   console.log("error occurred", error);
-    // }
+    try {
+      await createPostAction(inputText, selectedFile);
+    } catch (error) {
+      console.log("error occurred", error);
+    }
     setInputText("");
     setOpen(false);
   };
