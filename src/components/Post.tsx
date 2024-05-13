@@ -1,6 +1,6 @@
 "use client";
+
 import React from "react";
-// import ProfilePhoto from "./shared/ProfilePhoto";
 import { useUser } from "@clerk/nextjs";
 import { Button } from "./ui/button";
 import { Trash2 } from "lucide-react";
@@ -8,11 +8,9 @@ import { Badge } from "./ui/badge";
 import { IPostDocument } from "@/models/post.model";
 import PostContent from "./PostContent";
 import SocialOptions from "./SocialOptions";
-import ReactTimeAgo from "react-time-ago";
-import { deletePostAction } from "@/lib/serveraction";
+import { deletePostAction } from "@/lib/serveractions";
 import ProfilePhoto from "./ProfilePhoto";
-// import ReactTimeago from "react-timeago";
-// import { deletePostAction } from "@/lib/serveractions";
+import ReactTimeAgo from "react-timeago"
 
 const Post = ({ post }: { post: IPostDocument }) => {
   const { user } = useUser();

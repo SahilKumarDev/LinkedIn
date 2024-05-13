@@ -13,7 +13,7 @@ import { toast } from "sonner";
 import ProfilePhoto from "./ProfilePhoto";
 import { Textarea } from "./ui/textarea";
 import { readFileAsDataUrl } from "@/lib/utils";
-import { createPostAction } from "@/lib/serveraction";
+import { createPostAction } from "@/lib/serveractions";
 
 export function PostDialog({
   setOpen,

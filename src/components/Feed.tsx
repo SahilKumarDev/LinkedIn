@@ -1,10 +1,7 @@
 import React from "react";
 import PostInput from "./PostInput";
-import { getAllPosts } from "@/lib/serveraction";
+import { getAllPosts } from "@/lib/serveractions";
 import Post from "./Posts";
-// import { Post } from "@/models/post.model";
-// import PostDialog from './PostDialog'
-// import PostInput from './PostInput'
 
 const Feed = async ({ user }: { user: any }) => {
   const userData = JSON.parse(JSON.stringify(user));

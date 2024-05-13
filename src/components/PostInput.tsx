@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { Input } from "./ui/input";
 import ProfilePhoto from "./ProfilePhoto";
 import { PostDialog } from "./PostDialog";
-// import PostDialog from "./PostDialog";
 
 const PostInput = ({ user }: { user: any }) => {
   const [open, setOpen] = useState<boolean>(false);

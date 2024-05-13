@@ -5,8 +5,6 @@ import { IPostDocument } from "@/models/post.model";
 import { useUser } from "@clerk/nextjs";
 import CommentInput from "./CommentInput";
 import Comments from "./Comments";
-// import CommentInput from "./CommentInput";
-// import Comments from "./Comments";
 
 const SocialOptions = ({ post }: { post: IPostDocument }) => {
   const { user } = useUser();
