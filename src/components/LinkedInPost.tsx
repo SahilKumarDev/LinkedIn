@@ -34,14 +34,11 @@ const LinkedInPost = () => {
       <div>
         {newsItems.map((item, index) => {
           return (
-            <Link  key={index}  href={item.Link}>
-              <div
-               
-                className="px-3 flex justify-between items-center py-2 hover:bg-gray-200 hover:cursor-pointer"
-              >
+            <Link key={index} href={item.Link}>
+              <div className="px-3 flex justify-between items-center py-2 hover:bg-gray-200 hover:cursor-pointer">
                 <h1 className="text-sm font-medium">{item.heading} 👉</h1>
                 <p className="text-xs text-blue-600 hover:text-blue-700">
-                   Link
+                  Link
                 </p>
               </div>
             </Link>

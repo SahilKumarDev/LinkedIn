@@ -42,9 +42,7 @@ const Sidebar = ({ user }: { user: any }) => {
         <div className="border-b border-b-gray-300">
           <div className="p-2 mt-5 text-center">
             <h1 className="font-bold hover:underline cursor-pointer">
-              {user
-                ? `${user?.firstName} ${user?.lastName}`
-                : "Full Name"}
+              {user ? `${user?.firstName} ${user?.lastName}` : "Full Name"}
             </h1>
             <p className="text-xs">
               Last Active At {user ? `${formattedDate}` : "Which Time"}
