@@ -34,9 +34,9 @@ const LiveProject = () => {
       <div>
         {newsItems.map((item, index) => {
           return (
-            <Link href={item.Link}>
+            <Link key={index} href={item.Link}>
               <div
-                key={index}
+              
                 className="px-3 flex justify-between items-center py-2 hover:bg-gray-200 hover:cursor-pointer"
               >
                 <h1 className="text-sm font-medium">{item.heading} 👉</h1>
