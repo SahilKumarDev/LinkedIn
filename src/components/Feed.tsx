@@ -5,6 +5,9 @@ import Post from "./Posts";
 
 const Feed = async ({ user }: { user: any }) => {
   const userData = JSON.parse(JSON.stringify(user));
+// console.log(userData);
+
+
   const posts = await getAllPosts();
 
   return (

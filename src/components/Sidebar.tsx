@@ -1,6 +1,7 @@
 import React from "react";
 import ProfilePhoto from "./ProfilePhoto";
 import Image from "next/image";
+import Posts from "./Posts";
 
 const Sidebar = ({ user }: { user: any }) => {
   const timestamp = user?.lastActiveAt;
@@ -43,10 +44,10 @@ const Sidebar = ({ user }: { user: any }) => {
             <h1 className="font-bold hover:underline cursor-pointer">
               {user
                 ? `${user?.firstName} ${user?.lastName}`
-                : "Sahil Kumar dev"}
+                : "Full Name"}
             </h1>
             <p className="text-xs">
-              Last Active At {user ? `${formattedDate}` : "00:00"}
+              Last Active At {user ? `${formattedDate}` : "Which Time"}
             </p>
           </div>
         </div>
@@ -55,11 +56,11 @@ const Sidebar = ({ user }: { user: any }) => {
       <div className="text-xs">
         <div className="w-full flex justify-between items-center px-3 py-2 hover:bg-gray-200 cursor-pointer">
           <p>Post Impression</p>
-          <p className="text-blue-500 font-bold">88</p>
+          <p className="text-blue-500 font-bold">0</p>
         </div>
         <div className="w-full flex justify-between items-center px-3 py-2 hover:bg-gray-200 cursor-pointer">
           <p>Posts</p>
-          <p className="text-blue-500 font-bold">0</p>
+          <p className="text-blue-500 font-bold">{Posts.length}</p>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ import PostContent from "./PostContent";
 import SocialOptions from "./SocialOptions";
 import { deletePostAction } from "@/lib/serveractions";
 import ProfilePhoto from "./ProfilePhoto";
-import ReactTimeAgo from "react-timeago"
+import ReactTimeAgo from "react-timeago";
 
 const Post = ({ post }: { post: IPostDocument }) => {
   const { user } = useUser();
@@ -23,15 +23,17 @@ const Post = ({ post }: { post: IPostDocument }) => {
         <ProfilePhoto src={post?.user?.profilePhoto!} />
         <div className="flex items-center justify-between w-full">
           <div>
-            <h1 className="text-sm font-bold">
-              {fullName}{" "}
-              <Badge variant={"secondary"} className="ml-2">
-                You
-              </Badge>
-            </h1>
-            <p className="text-xs text-gray-500">
-              @{user ? user?.username : "username"}
-            </p>
+            {loggedInUser ? (
+              <h1 className="text-sm font-bold">
+                {fullName}
+
+                <Badge variant={"secondary"} className="ml-2">
+                  You
+                </Badge>
+              </h1>
+            ) : (
+              <h1 className="text-sm font-bold">{fullName}</h1>
+            )}
 
             <p className="text-xs text-gray-500">
               <ReactTimeAgo date={new Date(post.createdAt)} />

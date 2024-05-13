@@ -13,7 +13,9 @@ const SocialOptions = ({ post }: { post: IPostDocument }) => {
   const [commentOpen, setCommentOpen] = useState(false);
 
   const likeOrDislikeHandler = async () => {
-    if (!user) throw new Error(" User not authenticated");
+    if (!user) {
+      throw new Error("User not authenticated to like this post");
+    }
     const tempLiked = liked;
     const tempLikes = likes;
     const dislike = likes?.filter((userId) => userId !== user.id);

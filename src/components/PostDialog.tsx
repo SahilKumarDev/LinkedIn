@@ -19,10 +19,12 @@ export function PostDialog({
   setOpen,
   open,
   src,
+  user,
 }: {
   setOpen: any;
   open: boolean;
   src: string;
+  user: any;
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [selectedFile, setSelectedFile] = useState<string>("");
@@ -58,9 +60,11 @@ export function PostDialog({
       >
         <DialogHeader>
           <DialogTitle className="flex gap-2">
-            <ProfilePhoto src={src} />
+            <ProfilePhoto src={user ? user?.imageUrl! : "/banner.jpg"} />
             <div>
-              <h1>Sahil kumar Dev</h1>
+              <h1>
+                {user ? `${user?.firstName} ${user?.lastName}` : "Full Name"}
+              </h1>
               <p className="text-xs">Post to anyone</p>
             </div>
           </DialogTitle>

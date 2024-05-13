@@ -10,7 +10,7 @@ export default async function Home() {
 
   return (
     <div className="pt-20">
-      <div className="max-w-6xl mx-auto flex justify-between gap-8">
+      <div className="max-w-6xl mx-auto flex justify-between gap-4">
         {/* Sidebar  */}
         <Sidebar user={User} />
         {/* Feed  */}
